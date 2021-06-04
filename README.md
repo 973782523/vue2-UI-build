@@ -1,24 +1,18 @@
-# vue2-build
+# vue2 UI框架的自动化打包
 
-## Project setup
-```
-yarn install
-```
+掉了100根头发, 终于在别人源码上抄到了, 其实牛逼的我是想自己写的, 但是老大知道肯定叼我
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+老大: 为啥不抄别人的, 你有别人想的到位
 
-### Compiles and minifies for production
-```
-yarn build
-```
+我: ...
 
-### Lints and fixes files
-```
-yarn lint
+抄了5,6个UI最终发现一个最简洁的`buefy ` UI框架
+
+后面发现他是用vue2 , 功夫不负有心人, 终于抄完了, 比较完整
+
+# 打包执行
+
+```js
+yarn  build:lib1
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

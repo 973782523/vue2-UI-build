@@ -5,7 +5,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+
+    "build:js1": "rollup -c && rollup -c --environment MINIFY",
+    "build:scss1": "sass src/scss/buefy-build.scss | node ./build/banner.js > dist/dist1.css && cleancss -o dist/dist1.min.css dist/dist1.css",
+    "build:lib1": "rimraf dist && npm run build:js1 && npm run build:scss1  |  node ./build/staticDist.js",
+    "build:lib:watch1": "concurrently \"npm run build:js:watch\" \"npm run build:scss:watch \" "
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -19,7 +24,19 @@
     "@vue/cli-service": "~5.0.0-beta.1",
     "eslint": "^7.20.0",
     "eslint-plugin-vue": "^7.6.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "rimraf": "2.6.0",
+    "rollup": "1.17.0",
+    "rollup-copy-plugin": "0.1.0",
+    "rollup-plugin-babel": "4.3.2",
+    "rollup-plugin-commonjs": "9.2.1",
+    "rollup-plugin-node-resolve": "4.0.1",
+    "rollup-plugin-replace": "2.1.0",
+    "rollup-plugin-terser": "4.0.4",
+    "rollup-plugin-vue": "5.0.0",
+    "clean-css-cli": "4.3.0",
+    "sass": "1.26.10",
+    "sass-loader": "7.3.1"
   },
   "eslintConfig": {
     "root": true,
